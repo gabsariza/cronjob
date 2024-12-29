@@ -30,7 +30,7 @@ This application is an Express server built with TypeScript that includes a cron
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/cronjob.git
+   git clone https://github.com/gabsariza/cronjob.git
    cd cronjob
    ```
 2. Install dependencies:
@@ -93,8 +93,15 @@ curl http://localhost:3000/status
 Response:
 ```json
 {
-  "running": true,
-  "lastRunTime": "2023-10-05T12:34:56.123Z"
+  "status": "running",
+  "lastRun": "2024-12-29T16:36:00.855Z"
+}
+```
+**OR**
+```json
+{
+  "status": "stopped",
+  "lastRun": "2024-12-29T16:36:00.855Z"
 }
 ```
 
