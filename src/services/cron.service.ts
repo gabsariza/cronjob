@@ -12,18 +12,20 @@ export class CronService {
     });
   }
 
-  start(): void {
+  start() {
     if (this.job) {
       this.job.start();
       this.isRunning = true;
     }
+    return this;
   }
 
-  stop(): void {
+  stop() {
     if (this.job) {
       this.job.stop();
       this.isRunning = false;
     }
+    return this;
   }
 
   getStatus(): { isRunning: boolean; lastRun: Date | null } {

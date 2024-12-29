@@ -68,7 +68,11 @@ curl http://localhost:3000/stop-cron
 ```
 Response:
 ```json
-{ "message": "Cron job stopped" }
+{
+  "msg": "Cron job has stopped.",
+  "isRunning": false,
+  "lastRun": "2024-12-29T17:13:00.365Z"
+}
 ```
 
 ### GET /start-cron
@@ -80,7 +84,11 @@ curl http://localhost:3000/start-cron
 ```
 Response:
 ```json
-{ "message": "Cron job started" }
+{
+  "msg": "Cron job has started.",
+  "isRunning": true,
+  "lastRun": "2024-12-29T17:13:00.365Z"
+}
 ```
 
 ### GET /status
@@ -94,14 +102,22 @@ Response:
 ```json
 {
   "status": "running",
-  "lastRun": "2024-12-29T16:36:00.855Z"
+  "lastRun": "2024-12-29T16:57:00.660Z",
+  "data": {
+    "isRunning": true,
+    "lastRun": "2024-12-29T16:57:00.660Z"
+  }
 }
 ```
 **OR**
 ```json
 {
   "status": "stopped",
-  "lastRun": "2024-12-29T16:36:00.855Z"
+  "lastRun": "2024-12-29T16:57:00.660Z",
+  "data": {
+    "isRunning": true,
+    "lastRun": "2024-12-29T16:57:00.660Z"
+  }
 }
 ```
 

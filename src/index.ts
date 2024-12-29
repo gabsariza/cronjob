@@ -26,14 +26,14 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.get("/stop-cron", (req: Request, res: Response) => {
-  cronJob.stop();
+  const status = cronJob.stop().getStatus();
   isRunning = false;
-  res.send("Cron job stopped.");
+  res.send({ msg: "Cron job has stopped.", ...status});
 });
 
 app.get("/start-cron", (req: Request, res: Response) => {
-  cronJob.start();
-  res.send("Cron job started.");
+  const status = cronJob.start().getStatus();
+  res.send({ msg: "Cron job has started.", ...status});
 });
 
 app.get("/status", (req: Request, res: Response) => {
@@ -41,6 +41,7 @@ app.get("/status", (req: Request, res: Response) => {
   res.json({
     status: status.isRunning ? "running" : "stopped",
     lastRun: status.lastRun ? status.lastRun.toISOString() : "never",
+    data: status,
   });
 });
 
