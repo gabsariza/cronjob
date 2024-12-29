@@ -104,7 +104,7 @@ Response:
   "status": "running",
   "lastRun": "2024-12-29T16:57:00.660Z",
   "data": {
-    "isRunning": false,
+    "isRunning": true,
     "lastRun": "2024-12-29T16:57:00.660Z"
   }
 }
@@ -115,7 +115,7 @@ Response:
   "status": "stopped",
   "lastRun": "2024-12-29T16:57:00.660Z",
   "data": {
-    "isRunning": true,
+    "isRunning": false,
     "lastRun": "2024-12-29T16:57:00.660Z"
   }
 }
