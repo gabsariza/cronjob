@@ -56,7 +56,13 @@ curl http://localhost:3000/
 ```
 Response:
 ```json
-{ "message": "Server is running" }
+{
+  "msg": "Server is running",
+  "cronStatus": {
+    "isRunning": true,
+    "lastRun": null
+  }
+}
 ```
 
 ### GET /stop-cron

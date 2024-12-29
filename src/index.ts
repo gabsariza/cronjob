@@ -22,7 +22,9 @@ cronJob.schedule("*/1 * * * *", task);
 cronJob.start();
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Express server with TypeScript and a running cron job!");
+    const cronStatus = cronJob.getStatus();
+    
+  res.send({ msg: "Server is running", cronStatus });
 });
 
 app.get("/stop-cron", (req: Request, res: Response) => {
