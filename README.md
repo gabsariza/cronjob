@@ -2,6 +2,25 @@
 
 This project is an Express server with a cron job implemented using TypeScript and `node-cron`. The cron job runs every minute and logs the execution time. The server provides endpoints to start, stop, and check the status of the cron job.
 
+# Overview
+This application is an Express server built with TypeScript that includes a cron job using the node-cron library. The cron job is scheduled to run every minute and logs the execution time. The server provides several endpoints to manage the cron job, including starting, stopping, and checking its status.
+
+## Key Features:
+- **Express Server**: A web server built using the Express framework.
+- **TypeScript**: Strongly typed JavaScript for better development experience and fewer runtime errors.
+- **Cron Job**: Scheduled tasks using node-cron that run every minute.
+- **Endpoints**: RESTful API endpoints to interact with the cron job.
+
+## Project Structure:
+- **src/index.ts**: The main entry point of the server, setting up routes and starting the Express server.
+- **src/services/cron.service.ts**: Contains the CronService class that manages the cron job, including scheduling, starting, stopping, and checking the status of the job.
+
+## Endpoints:
+- **GET /**: Returns a message indicating that the server is running.
+- **GET /stop-cron**: Stops the cron job.
+- **GET /start-cron**: Starts the cron job.
+- **GET /status**: Returns the status of the cron job, including whether it is running and the last run time.
+
 ## Prerequisites
 
 - Node.js
