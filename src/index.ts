@@ -22,20 +22,19 @@ cronJob.schedule("*/1 * * * *", task);
 cronJob.start();
 
 app.get("/", (req: Request, res: Response) => {
-    const cronStatus = cronJob.getStatus();
-    
+  const cronStatus = cronJob.getStatus();
   res.send({ msg: "Server is running", cronStatus });
 });
 
 app.get("/stop-cron", (req: Request, res: Response) => {
   const status = cronJob.stop().getStatus();
   isRunning = false;
-  res.send({ msg: "Cron job has stopped.", ...status});
+  res.send({ msg: "Cron job has stopped.", ...status });
 });
 
 app.get("/start-cron", (req: Request, res: Response) => {
   const status = cronJob.start().getStatus();
-  res.send({ msg: "Cron job has started.", ...status});
+  res.send({ msg: "Cron job has started.", ...status });
 });
 
 app.get("/status", (req: Request, res: Response) => {
